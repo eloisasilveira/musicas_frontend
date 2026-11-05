@@ -1,9 +1,7 @@
-
 const listaMusicas = document.getElementById('listaMusicas');
 
-
 async function buscarMusicas() {
-    const urlBackend = 'http://localhost:3000';
+  const urlBackend = 'http://localhost:3000';
 
   listaMusicas.innerHTML = '';
 
@@ -19,10 +17,33 @@ async function buscarMusicas() {
         <p><strong>Ano:</strong> ${musica.ano}</p>
         <p><strong>Duração:</strong> ${musica.duracao}</p>
         <a href="editar.html?id=${musica.id}">Editar</a>
+        <button onclick="apagarMusica(${musica.id})">Apagar</button>
       </div>
     `;
   });
 }
 
+async function apagarMusica(id) {
+  console.log("ID recebido na função apagarMusica:", id);
+
+  const urlBackend = 'http://localhost:3000';
+
+  const confirmou = confirm("Tem certeza que quer apagar essa música?");
+
+  if (!confirmou) {
+    return;
+  }
+
+  const resposta = await fetch(`${urlBackend}/apagar/${id}`, {
+    method: "DELETE"
+  });
+
+  const dados = await resposta.json();
+  alert(dados.mensagem);
+
+  window.location.reload();
+}
+
+window.apagarMusica = apagarMusica;
 
 buscarMusicas();
