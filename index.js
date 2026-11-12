@@ -1,7 +1,7 @@
 const listaMusicas = document.getElementById('listaMusicas');
 
 async function buscarMusicas() {
-  const urlBackend = 'http://localhost:3000';
+  const urlBackend = "https://musicas-backend-blue.vercel.app"
 
   listaMusicas.innerHTML = '';
 
