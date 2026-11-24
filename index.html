@@ -3,20 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Músicas</title>
+    <title>Minhas Músicas • Acervo Sonoro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Minhas Músicas</h1>
-        <a href="cadastrar.html">Cadastrar música</a>
+    <div class="aurora-bg" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-dot"></span>
+            SOUND<span class="serif-italic">Vault</span>
+        </a>
+        <div class="nav-links">
+            <a href="#acervo" class="nav-pill">CATÁLOGO</a>
+            <a href="cadastrar.html" class="nav-pill nav-pill-primary">+ NOVA MÚSICA</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">COLEÇÃO PESSOAL • FULLSTACK CLOUD</span>
+            <h1>COLOCANDO SUA <br><span class="serif-italic">música</span> EM FOCO</h1>
+            <p class="hero-sub">Explore, organize e gerencie cada faixa do seu catálogo em tempo real.</p>
+            <div class="hero-actions">
+                <a href="cadastrar.html" class="btn-pill btn-coral">CADASTRAR FAIXA</a>
+                <a href="#acervo" class="btn-pill btn-outline">EXPLORAR ACERVO</a>
+            </div>
+        </div>
+
+        <div class="vinyl-wrapper" aria-hidden="true">
+            <div class="vinyl-disc">
+                <div class="vinyl-grooves"></div>
+                <div class="vinyl-label">
+                    <span>SOUND VAULT</span>
+                    <small>33⅓ RPM</small>
+                    <div class="vinyl-hole"></div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section id="listaMusicas">
-           
-        </section>
+    <div class="marquee-bar" aria-hidden="true">
+        <div class="marquee-track">
+            <span>ROCK • BOSSA NOVA • SERTANEJO • POP • MPB • JAZZ • INDIE • ELETRÔNICA • </span>
+            <span>ROCK • BOSSA NOVA • SERTANEJO • POP • MPB • JAZZ • INDIE • ELETRÔNICA • </span>
+        </div>
+    </div>
+
+    <main id="acervo" class="catalog-section">
+        <div class="section-header">
+            <div>
+                <span class="section-kicker">REPERTÓRIO ATIVO</span>
+                <h2>MINHAS <span class="serif-italic">Músicas</span></h2>
+            </div>
+            <div class="equalizer-badge" title="Sincronizado com o banco">
+                <span></span><span></span><span></span><span></span>
+                <small>ONLINE</small>
+            </div>
+        </div>
+
+        <section id="listaMusicas"></section>
     </main>
+
+    <section class="cta-banner">
+        <div class="cta-inner">
+            <div>
+                <span class="cta-kicker">EXPANDA SUA PLAYLIST</span>
+                <h3>Tem uma nova descoberta musical?</h3>
+                <p>Adicione títulos, artistas, gêneros e duração direto no seu banco de dados na nuvem.</p>
+            </div>
+            <a href="cadastrar.html" class="btn-pill btn-dark">+ ADICIONAR AGORA</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span>SOUNDVAULT © 2026</span>
+        <span>PROJETO FULLSTACK • VERCEL + MYSQL</span>
+    </footer>
 
     <script src="index.js"></script>
 </body>

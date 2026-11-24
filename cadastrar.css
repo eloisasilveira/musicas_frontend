@@ -1,76 +1,174 @@
-* {
-    box-sizing: border-box;
+:root {
+    --bg-black: #070709;
+    --coral: #eb5e3c;
+    --coral-glow: rgba(235, 94, 60, 0.4);
+    --purple-glow: rgba(118, 56, 250, 0.35);
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --text-main: #f5f5f7;
+    --text-muted: #9ca3af;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background-color: #f4f5f7;
-    color: #333;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.voltar {
-    display: inline-block;
-    color: #5a5be0;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.voltar:hover {
-    text-decoration: underline;
-}
-
-h1 {
-    font-size: 24px;
-    color: #111;
-    margin-bottom: 25px;
-}
-
-.campo {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 6px;
-}
-
-input {
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    outline: none;
-    background-color: #fff;
-}
-
-input:focus {
-    border-color: #5a5be0;
-}
-
-#botaoCadastrar {
+    justify-content: center;
+    align-items: center;
+    padding: 28px 16px;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.75;
+    animation: floatFormOrb 14s ease-in-out infinite alternate;
+  }
+  
+  .orb-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--coral-glow);
+    top: -80px;
+    left: 10%;
+  }
+  
+  .orb-2 {
+    width: 480px;
+    height: 480px;
+    background: var(--purple-glow);
+    bottom: -100px;
+    right: 10%;
+    animation-delay: -5s;
+  }
+  
+  @keyframes floatFormOrb {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(40px, 35px) scale(1.1); }
+  }
+  
+  .form-container {
     width: 100%;
-    padding: 12px;
-    background-color: #5a5be0;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 26px;
+    padding: 36px 32px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  }
+  
+  .voltar {
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+  }
+  
+  .voltar:hover {
+    color: var(--coral);
+  }
+  
+  .form-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 28px;
+  }
+  
+  .serif-italic {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--coral);
+  }
+  
+  .campo {
+    margin-bottom: 18px;
+  }
+  
+  .campo-duplo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #d1d5db;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus {
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(235, 94, 60, 0.2);
+  }
+  
+  button {
+    width: 100%;
     margin-top: 10px;
-}
-
-#botaoCadastrar:hover {
-    background-color: #4849c7;
-}
+    padding: 15px;
+    border-radius: 999px;
+    border: none;
+    background: var(--coral);
+    color: #09090b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  button:hover {
+    background: #ff7352;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--coral-glow);
+  }
