@@ -1,8 +1,8 @@
+const urlBackend = "https://musicas-backend-blue.vercel.app"
+
 const listaMusicas = document.getElementById('listaMusicas');
 
 async function buscarMusicas() {
-  const urlBackend = "https://musicas-backend-blue.vercel.app"
-
   listaMusicas.innerHTML = '';
 
   const resposta = await fetch(urlBackend);
@@ -24,10 +24,6 @@ async function buscarMusicas() {
 }
 
 async function apagarMusica(id) {
-  console.log("ID recebido na função apagarMusica:", id);
-
-  const urlBackend = 'http://localhost:3000';
-
   const confirmou = confirm("Tem certeza que quer apagar essa música?");
 
   if (!confirmou) {
