@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Música • SoundVault</title>
+    <title>Cadastrar Música • SOUNDVAULT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="cadastrar.css">
 </head>
 <body>
-    <div class="aurora-bg" aria-hidden="true">
-        <span class="orb orb-1"></span>
-        <span class="orb orb-2"></span>
+    <div class="ambient-backdrop" aria-hidden="true">
+        <div class="fluid-ribbon-layer">
+            <div class="neon-ribbon ribbon-cyan-diag"></div>
+            <div class="neon-ribbon ribbon-sapphire-loop"></div>
+        </div>
     </div>
 
     <main class="form-container">
         <a class="voltar" href="index.html">← Voltar para a lista</a>
-        <span class="form-tag">NOVO REGISTRO</span>
-        <h1>Cadastrar <span class="serif-italic">música</span></h1>
+        <span class="form-tag">NOVO REGISTRO • CLOUD CRUD</span>
+        <h1>Cadastrar <em>música</em></h1>
 
         <div class="campo">
-            <label for="titulo">Título da faixa</label>
-            <input type="text" id="titulo" placeholder="Ex: Evidências">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" placeholder="Ex: Garota de Ipanema">
         </div>
 
         <div class="campo">
-            <label for="artista">Artista / Banda</label>
-            <input type="text" id="artista" placeholder="Ex: Chitãozinho e Xororó">
+            <label for="artista">Artista</label>
+            <input type="text" id="artista" placeholder="Ex: Tom Jobim">
         </div>
 
         <div class="campo">
-            <label for="genero">Gênero musical</label>
-            <input type="text" id="genero" placeholder="Ex: Sertanejo">
+            <label for="genero">Gênero</label>
+            <input type="text" id="genero" placeholder="Ex: Bossa Nova">
         </div>
 
         <div class="campo-duplo">
             <div class="campo">
                 <label for="ano">Ano</label>
-                <input type="number" id="ano" placeholder="1990">
+                <input type="number" id="ano" placeholder="1962">
             </div>
 
             <div class="campo">
-                <label for="duracao">Duração (min)</label>
+                <label for="duracao">Duração em minutos</label>
                 <input type="number" id="duracao" placeholder="5">
             </div>
         </div>
 
-        <button id="botaoCadastrar">CADASTRAR MÚSICA</button>
+        <button id="botaoCadastrar">Cadastrar</button>
     </main>
 
     <script src="cadastrar.js"></script>

@@ -3,90 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Músicas • Acervo Sonoro</title>
+    <title>Minhas Músicas • SOUNDVAULT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="aurora-bg" aria-hidden="true">
-        <span class="orb orb-1"></span>
-        <span class="orb orb-2"></span>
-        <span class="orb orb-3"></span>
+    <div class="ambient-backdrop" aria-hidden="true">
+        <div class="fluid-ribbon-layer">
+            <div class="neon-ribbon ribbon-cyan-diag"></div>
+            <div class="neon-ribbon ribbon-sapphire-loop"></div>
+            <div class="neon-ribbon ribbon-cobalt-arc"></div>
+            <div class="neon-ribbon ribbon-deep-ocean"></div>
+        </div>
+    </div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="corner-vinyl-stage" aria-hidden="true">
+        <div class="vinyl-outer-guide-ring"></div>
+        <div class="vinyl-spinning-body">
+            <div class="vinyl-grooves-layer"></div>
+            <div class="vinyl-track-bands"></div>
+            <div class="vinyl-label-ring-ticks"></div>
+        </div>
+        <div class="vinyl-fixed-specular"></div>
+        <div class="vinyl-center-label">
+            <span class="vinyl-label-brand">SOUNDVAULT</span>
+            <div class="vinyl-gold-eq">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="vinyl-spindle-hole"></div>
+        </div>
     </div>
 
-    <nav class="navbar">
-        <a href="index.html" class="brand">
-            <span class="brand-dot"></span>
-            SOUND<span class="serif-italic">Vault</span>
-        </a>
-        <div class="nav-links">
-            <a href="#acervo" class="nav-pill">CATÁLOGO</a>
-            <a href="cadastrar.html" class="nav-pill nav-pill-primary">+ NOVA MÚSICA</a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">COLEÇÃO PESSOAL • FULLSTACK CLOUD</span>
-            <h1>COLOCANDO SUA <br><span class="serif-italic">música</span> EM FOCO</h1>
-            <p class="hero-sub">Explore, organize e gerencie cada faixa do seu catálogo em tempo real.</p>
-            <div class="hero-actions">
-                <a href="cadastrar.html" class="btn-pill btn-coral">CADASTRAR FAIXA</a>
-                <a href="#acervo" class="btn-pill btn-outline">EXPLORAR ACERVO</a>
-            </div>
-        </div>
-
-        <div class="vinyl-wrapper" aria-hidden="true">
-            <div class="vinyl-disc">
-                <div class="vinyl-grooves"></div>
-                <div class="vinyl-label">
-                    <span>SOUND VAULT</span>
-                    <small>33⅓ RPM</small>
-                    <div class="vinyl-hole"></div>
+    <div class="main-container">
+        <header class="glass-header">
+            <div class="brand-cluster">
+                <div class="brand-logo">
+                    <span class="brand-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="9" />
+                            <circle cx="12" cy="12" r="2.5" />
+                        </svg>
+                    </span>
+                    SOUNDVAULT
+                </div>
+                <div class="catalog-counter-pill">
+                    <strong id="totalTracksBadge">0</strong> músicas no acervo
                 </div>
             </div>
-        </div>
-    </header>
 
-    <div class="marquee-bar" aria-hidden="true">
-        <div class="marquee-track">
-            <span>ROCK • BOSSA NOVA • SERTANEJO • POP • MPB • JAZZ • INDIE • ELETRÔNICA • </span>
-            <span>ROCK • BOSSA NOVA • SERTANEJO • POP • MPB • JAZZ • INDIE • ELETRÔNICA • </span>
-        </div>
+            <div class="header-controls">
+                <button type="button" class="sfx-toggle-btn" id="btnToggleSfx" title="Ativar/Desativar som ao deslizar">
+                    <svg id="sfxIconOn" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    </svg>
+                    <svg id="sfxIconOff" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <line x1="23" y1="9" x2="17" y2="15" />
+                        <line x1="17" y1="9" x2="23" y2="15" />
+                    </svg>
+                </button>
+
+                <a href="cadastrar.html" class="primary-add-btn">+ Cadastrar música</a>
+            </div>
+        </header>
+
+        <section class="editorial-hero-header">
+            <div class="hero-eyebrow">
+                <span class="status-pulse-dot"></span>
+                CATÁLOGO FONOGRÁFICO • CLOUD CRUD
+            </div>
+            <h1>Minhas <em>músicas</em></h1>
+        </section>
+
+        <main class="spatial-gallery-wrapper">
+            <div class="coverflow-viewport" id="coverflowViewport">
+                <div class="spatial-ar-hud" id="spatialArHud" aria-hidden="true">
+                    <span class="ar-corner-bracket tl"></span>
+                    <span class="ar-corner-bracket tr"></span>
+                    <span class="ar-corner-bracket bl"></span>
+                    <span class="ar-corner-bracket br"></span>
+                    <div class="ar-hud-telemetry">
+                        <span>SPATIAL AUDIO • AR/VR VIEWPORT</span>
+                        <span id="arCoordsTelemetry">X: 00.0° | Y: 00.0° | Z: +48mm</span>
+                    </div>
+                </div>
+                <div class="ar-orbital-ring" aria-hidden="true"></div>
+                <section id="listaMusicas" class="coverflow-stage"></section>
+            </div>
+
+            <div class="spatial-nav-dock">
+                <button type="button" class="spatial-arrow-btn" id="btnPrevCard" aria-label="Disco anterior">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+
+                <div class="spatial-track-readout">
+                    <strong id="dockTrackTitle">Carregando acervo...</strong>
+                    <span id="dockTrackCounter">00 / 00</span>
+                </div>
+
+                <button type="button" class="spatial-arrow-btn" id="btnNextCard" aria-label="Próximo disco">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="carousel-dots-row" id="carouselDotsRow"></div>
+        </main>
+
+        <section class="stats-dashboard-panel">
+            <div class="stat-glass-card">
+                <span class="stat-card-label">Total de Faixas</span>
+                <strong class="stat-card-value" id="statTotalTracks">00</strong>
+                <span class="stat-card-sub">Discos catalogados</span>
+            </div>
+
+            <div class="stat-glass-card">
+                <span class="stat-card-label">Tempo Acumulado</span>
+                <strong class="stat-card-value" id="statTotalMinutes">0 min</strong>
+                <span class="stat-card-sub">Reprodução contínua</span>
+            </div>
+
+            <div class="stat-glass-card">
+                <span class="stat-card-label">Década Predominante</span>
+                <strong class="stat-card-value" id="statTopDecade">—</strong>
+                <span class="stat-card-sub" id="statDecadeDetail">Maior presença no catálogo</span>
+            </div>
+        </section>
     </div>
-
-    <main id="acervo" class="catalog-section">
-        <div class="section-header">
-            <div>
-                <span class="section-kicker">REPERTÓRIO ATIVO</span>
-                <h2>MINHAS <span class="serif-italic">Músicas</span></h2>
-            </div>
-            <div class="equalizer-badge" title="Sincronizado com o banco">
-                <span></span><span></span><span></span><span></span>
-                <small>ONLINE</small>
-            </div>
-        </div>
-
-        <section id="listaMusicas"></section>
-    </main>
-
-    <section class="cta-banner">
-        <div class="cta-inner">
-            <div>
-                <span class="cta-kicker">EXPANDA SUA PLAYLIST</span>
-                <h3>Tem uma nova descoberta musical?</h3>
-                <p>Adicione títulos, artistas, gêneros e duração direto no seu banco de dados na nuvem.</p>
-            </div>
-            <a href="cadastrar.html" class="btn-pill btn-dark">+ ADICIONAR AGORA</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <span>SOUNDVAULT © 2026</span>
-        <span>PROJETO FULLSTACK • VERCEL + MYSQL</span>
-    </footer>
 
     <script src="index.js"></script>
 </body>
